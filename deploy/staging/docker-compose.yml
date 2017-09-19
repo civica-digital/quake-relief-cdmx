@@ -1,0 +1,51 @@
+version: '3'
+
+volumes:
+  db_data: {}
+  redis: {}
+
+services:
+  db:
+    image: postgres:9.6
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  redis:
+    command: redis-server --appendonly no --save ""
+    image: redis:3.2-alpine
+    volumes:
+      - redis:/var/lib/redis/data
+
+  web:
+    image: 472554934874.dkr.ecr.us-east-1.amazonaws.com/quake-relief-cdmx
+    restart: always
+    depends_on:
+      - db
+    env_file:
+      - ./.env
+    labels:
+      - "traefik.backend=quake-relief-cdmx-web"
+      - "traefik.frontend.rule=Host:quake-relief-cdmx.civicadesarrolla.me"
+      - "traefik.enable=true"
+      - "traefik.port=3000"
+
+  sidekiq:
+    image: 472554934874.dkr.ecr.us-east-1.amazonaws.com/quake-relief-cdmx
+    command: bundle exec sidekiq
+    restart: always
+    depends_on:
+      - redis
+    env_file:
+      - ./.env
+
+  traefik:
+    image: traefik
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.toml:/traefik.toml
+      - ./acme.json:/acme.json
