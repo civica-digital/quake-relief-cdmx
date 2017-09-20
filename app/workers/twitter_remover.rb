@@ -1,10 +1,10 @@
 require 'twitter_scanner'
 
-class TwitterWorker
+class TwitterRemover
   include Sidekiq::Worker
   sidekiq_options :retry => false
 
-  def perform(search_terms)
-    TwitterScanner.scan(search_terms)
+  def perform(*args)
+    TwitterScanner.remove_obsolete
   end
 end

@@ -28,4 +28,8 @@ module TwitterScanner
     end
   end
 
+  def self.remove_obsolete
+    Tweet.where("created_at < ?", 12.hours.ago).delete_all
+  end
+
 end
