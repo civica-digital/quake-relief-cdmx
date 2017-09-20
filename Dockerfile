@@ -36,8 +36,6 @@ RUN set -ex \
 
 COPY . $APP_HOME
 
-RUN rake assets:precompile
-
 RUN chown -R nobody:nogroup $APP_HOME
 USER nobody
 
