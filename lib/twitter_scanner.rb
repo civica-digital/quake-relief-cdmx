@@ -12,10 +12,17 @@ module TwitterScanner
 
     tweets = []
     client.search(keywords, result_type: "recent").collect do |tweet|
-      tweets << Tweet.new(twitter_id: tweet.id,
+      next if Tweet.find_by_twitter_id(tweet.id).present?
+      t = Tweet.new(twitter_id: tweet.id,
         author: tweet.user.screen_name,
         text: tweet.text,
-        url: tweet.uri)
+        url: tweet.uri
+      )
+      if tweet.geo.coords.present?
+        t.lat = tweet.geo.coords[0]
+        t.lng = tweet.geo.coords[1]
+      end
+      t.save
     end
   end
 
