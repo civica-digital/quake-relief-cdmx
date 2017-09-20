@@ -2,6 +2,7 @@ require 'twitter_scanner'
 
 class TwitterWorker
   include Sidekiq::Worker
+  sidekiq_options :retry => false
 
   def perform(*args)
     hashtags = %w(
