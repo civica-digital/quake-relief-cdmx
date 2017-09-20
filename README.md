@@ -9,3 +9,7 @@ El escenario principal que se cumple con este repo es permitir a las personas en
 3. Como persona que busco ayuda veo los Centros de Acopio, de atención y hospitales 
 
 # Mockup 
+
+https://app.moqups.com/civica-digital/d4yHUXskVr/view
+
+
