@@ -80,6 +80,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
+    msgpack (1.1.0)
     multipart-post (2.0.0)
     naught (1.1.0)
     netrc (0.11.0)
@@ -146,6 +147,8 @@ GEM
       sprockets (>= 3.0.0)
     thor (0.20.0)
     thread_safe (0.3.6)
+    timber (2.2.3)
+      msgpack (~> 1.0)
     twitter (6.1.0)
       addressable (~> 2.5)
       buftok (~> 0.2.0)
@@ -178,8 +181,9 @@ DEPENDENCIES
   sidekiq
   spring
   spring-watcher-listen (~> 2.0.0)
+  timber
   twitter
   tzinfo-data
 
 BUNDLED WITH
-   1.13.6
+   1.15.4

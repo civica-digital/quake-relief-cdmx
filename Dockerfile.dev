@@ -4,8 +4,9 @@ FROM ruby:2.4.1-alpine
 ENV APP_HOME=/usr/src/app \
     LANG=C.UTF-8 \
     PAGER='busybox less' \
+    PATH=/usr/src/app/bin:$PATH \
     TERM='xterm-256color' \
-    RAILS_ENV=production
+    RAILS_ENV=development
 
 WORKDIR $APP_HOME
 
@@ -21,26 +22,16 @@ RUN set -ex \
     && apk add --no-cache --virtual .runtime \
       tzdata \
       postgresql-dev \
-      nodejs
+      nodejs \
+      bash
 
 # Build
-COPY Gemfile* $APP_HOME/
-
 RUN set -ex \
     && apk add --no-cache --virtual .build \
       ruby-dev \
       build-base \
-      git \
-    && bundle install --without test development --jobs 4 --retry 3 \
-    && apk del .build
+      git
 
-COPY . $APP_HOME
-
-RUN rake assets:precompile
-
-RUN chown -R nobody:nogroup $APP_HOME
-USER nobody
-
-# Add Git release hash
-ARG release_commit=none
-ENV RELEASE_COMMIT $release_commit
+# Gems
+COPY Gemfile $APP_HOME/
+RUN bundle install --jobs 4 --retry 3

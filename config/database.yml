@@ -19,6 +19,3 @@ production: &production
   pool: <%= ENV.fetch('DATABASE_POOL') { 5 } %>
   timeout: 5000
   database_url: <%= ENV.fetch('DATABASE_URL') { '' } %>
-
-staging:
-  <<: *production

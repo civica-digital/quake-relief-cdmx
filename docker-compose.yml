@@ -1,9 +1,8 @@
-version: '2'
+version: '3'
 
 volumes:
   db_data: {}
   redis: {}
-  gems: {}
 
 services:
   db:
@@ -18,16 +17,18 @@ services:
       - redis:/var/lib/redis/data
 
   web: &web
-    image: civica-digital/urbem-bot:development
+    image: civica-digital/quake-relief-cdmx:development
     build:
       context: .
+      dockerfile: Dockerfile.dev
     depends_on:
       - db
     volumes:
       - .:/usr/src/app
-      - gems:/usr/local/bundle
     environment:
       - DATABASE_HOST=db
+      - DATABASE_PASSWORD=
+      - DATABASE_USERNAME=postgres
 
   sidekiq:
     <<: *web
