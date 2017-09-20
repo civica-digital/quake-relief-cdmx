@@ -28,6 +28,7 @@ class TwitterWorker
       #SOSCDMX
       #Sismomexico
       #Ayudasismo
+      edificio dañado
     )
     hashtags.each { |hashtag|
       TwitterScanner.scan(hashtag)
