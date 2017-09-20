@@ -28,6 +28,10 @@ services:
       - gems:/usr/local/bundle
     environment:
       - DATABASE_HOST=db
+      - TWITTER_CONSUMER_KEY=ALLzPn6kWAlGWVflkhkC268Gl
+      - TWITTER_CONSUMER_SECRET=lCSxH9oeRPOkuCv2eXOTlcVImEmVZ7Z2MYJDA9Dfy1GHo68d1K
+      - TWITTER_ACCESS_TOKEN=47820923-ane65Uhh0W1c0WtD1jlOnc9p3c4NEyJVSbiHaLnKF
+      - TWITTER_ACCESS_TOKEN_SECRET=T3JS3CHmlus4S8PQfwDu9g37d5DSzR32RApgKoTdtdPZN
 
   sidekiq:
     <<: *web
