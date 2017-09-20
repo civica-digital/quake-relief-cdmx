@@ -29,6 +29,7 @@ gem 'sidekiq'
 # gem 'rack-cors'
 gem 'twitter'
 gem 'timber'
+gem 'yaml_db'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
