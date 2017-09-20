@@ -13,10 +13,12 @@ module TwitterScanner
     tweets = []
     client.search(keywords, result_type: "recent").collect do |tweet|
       next if Tweet.find_by_twitter_id(tweet.id).present?
-      t = Tweet.new(twitter_id: tweet.id,
+      t = Tweet.new(
+        twitter_id: tweet.id,
         author: tweet.user.screen_name,
         text: tweet.text,
-        url: tweet.uri
+        url: tweet.uri,
+        created_at: tweet.created_at
       )
       if tweet.geo.coords.present?
         t.lat = tweet.geo.coords[0]
@@ -24,6 +26,10 @@ module TwitterScanner
       end
       t.save
     end
+  end
+
+  def self.remove_obsolete
+    Tweet.where("created_at < ?", 12.hours.ago).delete_all
   end
 
 end
