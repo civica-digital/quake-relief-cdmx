@@ -1,3 +1,5 @@
+require 'twitter_scanner'
+
 class TwitterWorker
   include Sidekiq::Worker
 
