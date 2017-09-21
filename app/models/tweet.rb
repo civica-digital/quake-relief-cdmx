@@ -11,7 +11,14 @@ class Tweet < ApplicationRecord
     self.search_by_keywords(Neighborhoods.find(neighborhood))
   }
 
+  def search_by_keywords(keywords)
+    keywords.each do |x|
+      result = search_by_keyword(x)
+    end
+  end
+
   scope :search_by_keywords, -> (keywords) {
+
     matches = keywords.map { |k| self.search_by_keyword(k) }
     matches.flatten
   }
