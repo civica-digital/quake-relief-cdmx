@@ -8,9 +8,18 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
+
+gem 'jquery-rails'
+
+#style
+gem 'haml'
+gem 'sass-rails', '~> 5.0'
+gem 'bourbon', '~> 4.2'
+gem 'neat'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 gem 'pg'
+gem 'pg_search'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 gem 'rest-client'
@@ -29,7 +38,8 @@ gem 'sidekiq'
 # gem 'rack-cors'
 gem 'twitter'
 gem 'timber'
-gem 'yaml_db'
+gem 'administrate'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

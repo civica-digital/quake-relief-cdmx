@@ -1,0 +1,80 @@
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+.margin-bullet {
+  margin-left: 3.1rem;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  font-size: $base-font-size;
+  line-height: $heading-line-height;
+  margin: 0 0 $small-spacing;
+}
+
+p {
+  margin: 0 0 $small-spacing;
+}
+
+a {
+  color: $action-color;
+  text-decoration: none;
+  transition: color $base-duration $base-timing;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: shade($action-color, 25%);
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+h1{
+    font-weight: 100;
+    font-size: 40px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  h2 {
+    font-weight: 300;
+    font-size: 32px;
+    color:$blue;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+ h3{
+    font-weight: 300;
+    font-size: 30px;
+    color:$blue;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  h4{
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }

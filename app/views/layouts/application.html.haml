@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title Urbem Ayuda
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all'
+    <script src="https://use.fontawesome.com/f2bcb1e9a2.js"></script>
+    = javascript_include_tag "https://code.jquery.com/jquery-2.1.1.min.js"
+    = javascript_include_tag "http://code.jquery.com/jquery-migrate-1.4.1.js"
+    = javascript_include_tag 'application'
+
+  %body
+    = render 'shared/header'
+    = render 'shared/modal'
+    = yield
+
