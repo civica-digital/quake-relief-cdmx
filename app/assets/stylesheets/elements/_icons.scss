@@ -1,0 +1,48 @@
+.close-icon {
+  @include size(3rem);
+  background: $white;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+
+  &::after,
+  &::before {
+    position: absolute;
+    left: 1.5rem;
+    top: 0;
+    height: 1.5rem;
+    width: 0.2rem;
+    background: $light-gray;
+    content: "";
+    display: block;
+    margin: 0;
+    transform: rotate(45deg);
+  }
+  @media (-webkit-min-device-pixel-ratio: 2),
+  (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    &::after {
+      top: 0;
+    }
+  }
+  &:hover::after,
+  &:hover::before {
+    background: darken($light-gray, 20%);
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+}
+
+.main-icon {
+  font-size: 35px !important;
+}
+
+.photo {
+  height: 1.5rem;
+  img {
+    height: 200%;
+    width: auto;
+  }
+}

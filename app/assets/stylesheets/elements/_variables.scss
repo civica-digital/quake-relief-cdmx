@@ -24,6 +24,7 @@ $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
 $purple: #606DFF;
+$white: #FFFFFF;
 
 // Font Colors
 $base-font-color: $dark-gray;
@@ -44,3 +45,19 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
+
+//device sizes
+$side-menu-width: 6.25rem;
+$side-menu-width-resp: 3.125rem;
+$max-content-width: 120rem; // 1200
+$max-limit-screen: 87.5rem; // 1400
+$max-desktop: 87.44rem; //1399
+$min-desktop: 60rem; // 960px
+$max-small-desktop: 59.94rem; //959
+$min-small-desktop: 48.75rem; // 780
+$max-tablet: 48.69rem; //779
+$min-tablet: 40rem; // 640
+$max-mobile: 39.94rem; // 639px
+$min-mobile: 20rem; //320px
+$small-padding: 0.625rem; //10px
+$big-padding: 0.9375rem;//15px

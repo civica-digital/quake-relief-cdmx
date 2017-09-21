@@ -1,0 +1,27 @@
+.tweet-feed {
+  margin: 2rem 0;
+
+  .tweet-item {
+    display: flex;
+    border-top: $base-border;
+    padding: 1rem 0;
+    .photo {
+      float: left;
+      margin-right: 1rem;
+    }
+    .tweet-content {
+      h1,h2,h3,h4,h5,h6,p {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .media {
+      display: block;
+      img {
+        max-height: 20rem;
+        height: auto;
+      }
+    }
+  }
+}

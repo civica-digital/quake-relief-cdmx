@@ -1,0 +1,66 @@
+@import 'neat';
+
+$modal-background: $white;
+
+
+.modal-fade-screen { // overlay
+    @include position(fixed, 0);
+    background-color: rgba(#000, 0.85);
+    opacity: 0;
+    padding-top: 0.6em;
+    text-align: left;
+    transition: opacity 0.25s ease;
+    visibility: hidden;
+    z-index: 5;
+
+    @include media($max-small-desktop) {
+      padding-top: 10em;
+    }
+
+    .modal-bg {
+      @include position(absolute, 0);
+      cursor: pointer;
+    }
+  }
+
+.modal-inner {
+  z-index: 6;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  position: fixed;
+  padding: 3rem;
+  text-align: justify;
+  background: $modal-background;
+  border-radius: $base-border-radius;
+  border: $base-border-color;
+  margin: auto;
+  margin-top: 0;
+  overflow: auto;
+  transition: opacity 0.25s ease;
+  width: 50%;
+  z-index: 9999;
+  a, span {
+    display: inline-block;
+  }
+
+  @include media(min-width $min-tablet max-width $max-content-width) {
+    width: 70%;
+    max-height: 60%;
+  }
+  @include media(min-width $min-mobile max-width $max-mobile) {
+    width: 95%;
+    max-height: 95%;
+  }
+}
+
+ .modal-close {
+   overflow: hidden;
+   position: absolute;
+   top: 1.5rem;
+   right: .5rem;
+   .close-icon {
+     float: right;
+   }
+ }
