@@ -1,0 +1,52 @@
+.modal-fade-screen
+.modal-inner
+  .modal-close
+    .close-icon
+  #modal-step-1
+    .custom-bullet
+      .bullet
+        <i class="fa fa-wrench main-icon" aria-hidden="true"></i>
+      .bullet-info
+        %h3 Palas
+        %p 10 Personas apoyando
+        %p.bold ¿En Dónde se necesitan
+        %span No tenemos ubicación identificada. Ayudanos a ubicarla
+        =link_to "+Agregar ubicacion", "#"
+        %p
+          =link_to "Quiero ayudar con eso", "#", class: "basic-button-link", id: 'step2_trigger'
+    .tweet-feed
+      %p.bold.margin-bullet Algunos de los Tweets que usamos para reconocer la necesidad
+      .tweet-item
+        .photo=image_tag 'https://pbs.twimg.com/profile_images/633842965622882304/Cy083Uu9_normal.png'
+        .tweet-content
+          %p.bold @username
+          %p Se necesita ayuda de XXX en el lugar XXXXX
+          %p
+            =link_to "Ver tweet", "https://twitter.com/AkireLincho/status/910648961584603138", class: "tweet-link"
+      .tweet-item
+        .photo=image_tag 'https://pbs.twimg.com/profile_images/633842965622882304/Cy083Uu9_normal.png'
+        .tweet-content
+          %p.bold @username
+          %p Se necesita ayuda de XXX en el lugar XXXXX
+          .media
+            =image_tag "https://pbs.twimg.com/media/DKNGZHcUQAAn_KP.jpg"
+          %p
+            =link_to "Ver tweet", "https://twitter.com/AkireLincho/status/910648961584603138", class:"tweet-link"
+  #modal-step-2.hidden-content
+    .custom-bullet
+      .bullet
+        <i class="fa fa-wrench main-icon" aria-hidden="true"></i>
+      .bullet-info
+        %h2 Apúntate a ayudar con Palas
+        %br
+        %p.bold Instrucciones para ayudar:
+        %p La ayuda se necesita en Salamanca y Puebla en la Colina Condesa
+        %p Deja tu ayuda con el guardia de la entrada.
+        %br
+        %p.bold Déjanos tu contacto para avisarte si la prioridad cambio:
+        %form
+          %input{placeholder: 'Correo electronico'}
+          %input{placeholder: 'Teléfono'}
+          %input{placeholder: 'Twitter username'}
+          %button#confirmed_help.basic-button Cuenten con mi apoyo
+
