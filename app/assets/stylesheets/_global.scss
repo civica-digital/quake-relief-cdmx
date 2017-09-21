@@ -52,6 +52,24 @@ section.home{
     }
   }
 }
+
+.container-flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 30px 0;
+  background-color: #f9f8f7;
+  span, form{
+    padding: 10px;
+  }
+}
+
+footer{
+  padding: 20px 0;
+  background-color:$purple;
+  color: #fff;
+}
 .bg_blue{ background-color: $blue !important;}
 .bg_green{ background-color: $green !important;}
 .bg_yellow{ background-color: $yellow !important;}
