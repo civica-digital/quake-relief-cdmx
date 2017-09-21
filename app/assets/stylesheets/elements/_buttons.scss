@@ -33,3 +33,21 @@
     }
   }
 }
+.basic-button {
+  padding: 1rem default;
+  margin: 1rem 0;
+  background-color: $purple;
+  color: $white;
+  border-radius: $base-border-radius;
+  display: inline-block;
+  &:hover, &:focus {
+    background-color: $medium-gray;
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+.basic-button-link {
+  @extend .basic-button;
+  padding: .5rem 1rem;
+}
