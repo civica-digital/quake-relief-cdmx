@@ -43,6 +43,16 @@ section.home{
     }
   }
 }
+
+.container-flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span, form{
+    align-self: flex-start;
+  }
+}
+
 .bg_blue{ background-color: $blue !important;}
 .bg_green{ background-color: $green !important;}
 .bg_yellow{ background-color: $yellow !important;}
