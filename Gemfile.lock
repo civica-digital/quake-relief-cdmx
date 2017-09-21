@@ -281,7 +281,7 @@ DEPENDENCIES
   bourbon (~> 4.2)
   byebug
   font-awesome-rails
-  haml
+  haml (~> 5.0.2)
   jquery-rails
   listen (~> 3.0.5)
   neat

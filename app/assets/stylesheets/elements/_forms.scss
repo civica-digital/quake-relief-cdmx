@@ -77,8 +77,53 @@ textarea {
   width: 100%;
 }
 
-select {
-  margin-bottom: $base-spacing;
-  max-width: 100%;
-  width: auto;
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
+  select {
+    background-color: #fff;
+    font-size: inherit;
+    padding: .5em 1em;
+    padding-right: 2.5em;
+    border: 2px solid $purple;
+    margin: 0;
+    border-radius: 3px;
+    text-indent: 0.01px;
+    text-overflow: '';
+    -moz-appearance: none;
+    -webkit-appearance:none;
+    appearance: none;
+    &:-ms-expand {
+      display: none;
+    }
+  }
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    color:$purple;
+  }
+  &:after {
+    content: "\2304";
+    height: 2em;
+    font-size: 1.5em;
+    line-height: 1.8em;
+    right: .5em;
+    top: 50%;
+    margin-top: -1em;
+    font-weight: 200;
+  }
+  &:before {
+    width: 2em;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 0 3px 3px 0;
+  }
+  label{
+    padding-right: 10px;
+  }
 }

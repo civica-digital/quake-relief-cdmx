@@ -1,12 +1,13 @@
 %section.home
   .container
     %h1 Principales áreas de necesidad (ultimas 2 horas)
+    %h3 Selecciona en la que tú puedes apuntarte a ayudar.
     .container-flex
       %span Filtrar por zonas:
       %form{onchange: "sendForm(this);", :data => ''}
-        = select_tag "Todas", options_for_select(@status_options, "Todas"), {:class => "form-control"}
+        .custom-dropdown
+          = select_tag "Todas", options_for_select(@status_options, "Todas"), {:class => "form-control"}
 
-    %h3 Selecciona en la que tú puedes apuntarte a ayudar.
     .cards
       .card.bg_purple.modal-toggle-js
         =fa_icon 'tint 2x'
