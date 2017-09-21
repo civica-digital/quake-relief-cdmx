@@ -10,10 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920182007) do
+ActiveRecord::Schema.define(version: 20170921035127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "fuzzystrmatch"
+  enable_extension "pg_trgm"
+  enable_extension "unaccent"
 
   create_table "pg_search_documents", force: :cascade do |t|
     t.text     "content"
@@ -33,6 +36,19 @@ ActiveRecord::Schema.define(version: 20170920182007) do
     t.string   "url"
     t.float    "lat"
     t.float    "lng"
+  end
+
+  create_table "tweets_and_supporters_counters", force: :cascade do |t|
+    t.string  "need"
+    t.string  "neighborhood"
+    t.integer "tweets_count"
+    t.integer "supporters_count"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "phone_number"
+    t.string "twitter"
   end
 
 end

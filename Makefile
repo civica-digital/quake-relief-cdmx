@@ -10,7 +10,7 @@ ci: bundle prepare test analyze ## Run the CI strategy (prepare, test, analyze)
 bundle: ## Rebuild the image and run the bundle lock
 	docker-compose build web
 	@docker-compose down 2> /dev/null; true
-	docker-compose run --rm --no-deps web bundle lock
+	docker-compose run --rm --no-deps web bundle install
 
 prepare: tmp log ## Prepare the test environment and run migrations
 	docker-compose run --rm web rake db:create test:prepare db:migrate

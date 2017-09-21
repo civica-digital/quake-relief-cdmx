@@ -1,0 +1,2 @@
+class TweetsAndSupportersCounter < ApplicationRecord
+end
