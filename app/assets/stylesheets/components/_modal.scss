@@ -13,7 +13,7 @@ $modal-background: $white;
     visibility: hidden;
     z-index: 5;
 
-    @include media($max-small-desktop) {
+    @include media(59.94rem) {
       padding-top: 10em;
     }
 
@@ -45,11 +45,11 @@ $modal-background: $white;
     display: inline-block;
   }
 
-  @include media(min-width $min-tablet max-width $max-content-width) {
+  @include media(min-width 40rem max-width 120rem) {
     width: 70%;
     max-height: 60%;
   }
-  @include media(min-width $min-mobile max-width $max-mobile) {
+  @include media(min-width 20rem max-width 39.94rem) {
     width: 95%;
     max-height: 95%;
   }

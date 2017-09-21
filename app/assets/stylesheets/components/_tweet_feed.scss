@@ -23,5 +23,10 @@
         height: auto;
       }
     }
+    .tweet-link {
+      &:hover,&:focus {
+        text-decoration: underline;
+      }
+    }
   }
 }
