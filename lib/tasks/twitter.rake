@@ -35,7 +35,7 @@ namespace :twitter do
     }
   end
 
-  desc "Removes tweets older than 12 hours ago"
+  desc "Removes tweets older than 2 hours ago"
   task remove_obsolete: :environment do
     TwitterRemover.perform_async()
   end
