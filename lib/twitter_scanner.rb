@@ -19,15 +19,15 @@ module TwitterScanner
         url: tweet.uri,
         created_at: tweet.created_at
       )
-      t.save
       tweet_text = t.text.downcase
 
       needs = self.extract_needs(tweet_text)
       next if needs.blank?
       neighborhood = self.extract_neighborhood(tweet_text)
       next if neighborhood.blank?
-
       self.update_tweets_counter(needs, neighborhood)
+
+      t.save
     end
   end
 

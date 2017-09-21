@@ -5,8 +5,13 @@ class NeedsController < ApplicationController
     lng = params[:lng].to_f
     locations = YAML.load_file("lib/locations.yml")
     closest = closest_location(lat, lng, locations)
-    if closest.present?
-      render json: closest
+    neighborhood = closest.keys.first
+
+    needs = TweetsAndSupportersCounter.by_neighborhood(neighborhood)
+                                      .top_needs(3)
+
+    if needs.present?
+      render json: needs
     else
       render json: {}, status: :no_content
     end
