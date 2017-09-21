@@ -5,6 +5,14 @@ body {
   line-height: $base-line-height;
 }
 
+.margin-bullet {
+  margin-left: 3.1rem;
+}
+
+.bold {
+  font-weight: 600;
+}
+
 h1,
 h2,
 h3,
@@ -49,6 +57,13 @@ picture {
 h1{
     font-weight: 100;
     font-size: 40px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  h2 {
+    font-weight: 300;
+    font-size: 32px;
+    color:$blue;
     padding-bottom: 0;
     margin-bottom: 0;
   }

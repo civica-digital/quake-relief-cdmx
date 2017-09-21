@@ -10,6 +10,11 @@
     width: 100%; padding-left:10px; padding-right:10px;
   }
 }
+
+.hidden-content {
+  display: none;
+}
+
 header{
   background-color: $purple;
   color: #fff;

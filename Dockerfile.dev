@@ -31,7 +31,3 @@ RUN set -ex \
       ruby-dev \
       build-base \
       git
-
-# Gems
-COPY Gemfile $APP_HOME/
-RUN bundle install --jobs 4 --retry 3

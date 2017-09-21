@@ -3,6 +3,7 @@ version: '3'
 volumes:
   db_data: {}
   redis: {}
+  gems: {}
 
 services:
   db:
@@ -25,6 +26,7 @@ services:
       - db
     volumes:
       - .:/usr/src/app
+      - gems:/usr/local/bundle
     environment:
       - DATABASE_HOST=db
       - DATABASE_PASSWORD=

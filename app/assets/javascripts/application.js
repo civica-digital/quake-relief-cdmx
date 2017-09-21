@@ -10,5 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
+//= require jquery
+//= require jquery_ujs
+//= require modal
 //Document and DOM is now available
+
+
+$(document).on('ready page:load', function() {
+  modalToggle();
+})
+
