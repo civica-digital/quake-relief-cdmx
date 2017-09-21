@@ -1,57 +1,61 @@
 %section.home
   .container
-    %h3 Principales áreas de necesidad (ultimas 2 horas)
-    %p Selecciona en la que tú puedes apuntarte a ayudar.
+    %h1 Principales áreas de necesidad (ultimas 2 horas)
+    .container-flex
+      %span Filtrar por zonas:
+      %form{onchange: "sendForm(this);", :data => ''}
+        = select_tag "Todas", options_for_select(@status_options, "Todas"), {:class => "form-control"}
+
+    %h3 Selecciona en la que tú puedes apuntarte a ayudar.
     .cards
       .card.bg_purple.modal-toggle-js
-        .icon=image_tag('icons/agua.svg')
+        =fa_icon 'tint 2x'
         %h4 Agua Embotellada
         %p 50 personas apoyando
-      .card.bg_purple
-        .icon=image_tag('icons/agua.svg')
-        %h4 Agua Embotellada
+      .card.bg_purple.modal-toggle-js
+        =fa_icon 'user-md 2x'
+        %h4 Agua médica
         %p 50 personas apoyando
-      .card.bg_purple
-        .icon=image_tag('icons/agua.svg')
-        %h4 Agua Embotellada
+      .card.bg_purple.modal-toggle-js
+        =fa_icon 'wrench 2x'
+        %h4 Palas
         %p 50 personas apoyando
-      .card.bg_purple
-        .icon=image_tag('icons/agua.svg')
-        %h4 Agua Embotellada
+      .card.bg_purple.modal-toggle-js
+        =fa_icon 'medkit 2x'
+        %h4 Material de curación
         %p 50 personas apoyando
-      .card.bg_purple
-        .icon=image_tag('icons/agua.svg')
-        %h4 Agua Embotellada
+      .card.bg_purple.modal-toggle-js
+        =fa_icon 'motorcycle 2x'
+        %h4 Motocicletas
         %p 50 personas apoyando
-      .card.bg_purple
-        .icon=image_tag('icons/agua.svg')
-        %h4 Agua Embotellada
+      .card.bg_purple.modal-toggle-js
+        =fa_icon 'cutlery 2x'
+        %h4 Alimento para bebé
         %p 50 personas apoyando
-    %h3 Áreas con mayor número de voluntarios apuntados
-    %p Si no puedes ayudar en las que necesitan más apoyo, pero puedes apoyar en éstas áreas, toda ayuda es bienvenida.
+    %h1 Áreas con mayor número de voluntarios apuntados
+    %h3 Si no puedes ayudar en las que necesitan más apoyo, pero puedes apoyar en éstas áreas, toda ayuda es bienvenida.
     .cards
-      .card.bg_purple
-        .icon=image_tag('icons/agua.svg')
+      .card.bg_purple.modal-toggle-js
+        =fa_icon 'tint 2x'
         %h4 Agua Embotellada
         %p 50 personas apoyando
-      .card.bg_purple
-        .icon=image_tag('icons/agua.svg')
-        %h4 Agua Embotellada
+      .card.bg_purple.modal-toggle-js
+        =fa_icon 'user-md 2x'
+        %h4 Agua médica
         %p 50 personas apoyando
-      .card.bg_purple
-        .icon=image_tag('icons/agua.svg')
-        %h4 Agua Embotellada
+      .card.bg_purple.modal-toggle-js
+        =fa_icon 'wrench 2x'
+        %h4 Palas
         %p 50 personas apoyando
-      .card.bg_purple
-        .icon=image_tag('icons/agua.svg')
-        %h4 Agua Embotellada
+      .card.bg_purple.modal-toggle-js
+        =fa_icon 'medkit 2x'
+        %h4 Material de curación
         %p 50 personas apoyando
-      .card.bg_purple
-        .icon=image_tag('icons/agua.svg')
-        %h4 Agua Embotellada
+      .card.bg_purple.modal-toggle-js
+        =fa_icon 'motorcycle 2x'
+        %h4 Motocicletas
         %p 50 personas apoyando
-      .card.bg_purple
-        .icon=image_tag('icons/agua.svg')
-        %h4 Agua Embotellada
+      .card.bg_purple.modal-toggle-js
+        =fa_icon 'cutlery 2x'
+        %h4 Alimento para bebé
         %p 50 personas apoyando
-
