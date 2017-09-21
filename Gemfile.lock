@@ -228,6 +228,9 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    yaml_db (0.6.0)
+      rails (>= 3.0, < 5.2)
+      rake (>= 0.8.7)
 
 PLATFORMS
   ruby
@@ -252,6 +255,7 @@ DEPENDENCIES
   timber
   twitter
   tzinfo-data
+  yaml_db
 
 BUNDLED WITH
    1.15.4
