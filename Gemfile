@@ -12,10 +12,11 @@ gem 'rails', '~> 5.0.2'
 gem 'jquery-rails'
 
 #style
-gem 'haml'
 gem 'sass-rails', '~> 5.0'
 gem 'bourbon', '~> 4.2'
 gem 'neat'
+gem 'haml', '~> 5.0.2'
+gem 'font-awesome-rails'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 gem 'pg'
