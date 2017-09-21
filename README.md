@@ -2,7 +2,7 @@ El escenario principal que se cumple con este repo es permitir a las personas en
 
 # Escenarios Actuales - 21/09/2017
 
-1. Como voluntario entro al sitio y localizo las temáticas en las que se están pidiendo más ayuda de acuerdo a los tweets de las últimas horas. 
+1. Como voluntario entro al sitio y localizo las temáticas en las que se están pidiendo más ayuda de acuerdo a los tweets de las últimas 2 horas. 
 
 2. Como voluntario visualizo los tweets relacionados con la temática y ubico a dónde debo ir a dar ayuda
 
