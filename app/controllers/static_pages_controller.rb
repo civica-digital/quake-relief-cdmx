@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
-    def index
-    end
+  def index
+    @counters = TweetsAndSupportersCounter.top_needs(6)
+  end
 end
 

@@ -3,30 +3,15 @@
     %h3 Principales áreas de necesidad (ultimas 2 horas)
     %p Selecciona en la que tú puedes apuntarte a ayudar.
     .cards
-      .card.bg_purple.modal-toggle-js
-        .icon=image_tag('icons/agua.svg')
-        %h4 Agua Embotellada
-        %p 50 personas apoyando
-      .card.bg_purple
-        .icon=image_tag('icons/agua.svg')
-        %h4 Agua Embotellada
-        %p 50 personas apoyando
-      .card.bg_purple
-        .icon=image_tag('icons/agua.svg')
-        %h4 Agua Embotellada
-        %p 50 personas apoyando
-      .card.bg_purple
-        .icon=image_tag('icons/agua.svg')
-        %h4 Agua Embotellada
-        %p 50 personas apoyando
-      .card.bg_purple
-        .icon=image_tag('icons/agua.svg')
-        %h4 Agua Embotellada
-        %p 50 personas apoyando
-      .card.bg_purple
-        .icon=image_tag('icons/agua.svg')
-        %h4 Agua Embotellada
-        %p 50 personas apoyando
+      -@counters.each_with_index do |counter, index|
+        .card.bg_purple.modal-toggle-js
+          - image = "icons/#{counter.need.parameterize}.svg"
+          - if asset_exists?(image)
+            .icon=image_tag(image)
+          - else
+            .icon=image_tag("icons/default.svg")
+          %h4=counter.need.capitalize
+          %p="#{counter.supporters_count} personas apoyando"
     %h3 Áreas con mayor número de voluntarios apuntados
     %p Si no puedes ayudar en las que necesitan más apoyo, pero puedes apoyar en éstas áreas, toda ayuda es bienvenida.
     .cards
@@ -54,4 +39,3 @@
         .icon=image_tag('icons/agua.svg')
         %h4 Agua Embotellada
         %p 50 personas apoyando
-
