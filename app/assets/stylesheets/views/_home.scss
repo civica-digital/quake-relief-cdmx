@@ -1,0 +1,29 @@
+section.home{
+  padding:60px 0;
+  text-align: center;
+  .cards{
+    overflow: hidden;
+    padding: 40px 0;
+    text-align: center;
+    .card{
+      color: #fff;
+      width: 300px;
+      display: inline-block;
+      padding: 30px;
+      color: #fff;
+      margin: 10px;
+      cursor: pointer;
+      &:last-child{
+        padding-right: 0;
+      }
+      h4{
+        font-size: 24px;
+        font-weight: 300;
+      }
+      &:focus, &:hover {
+        background-color: $light-purple !important;
+      }
+    }
+  }
+}
+
