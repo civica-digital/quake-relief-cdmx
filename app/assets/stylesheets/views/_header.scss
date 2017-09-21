@@ -1,0 +1,30 @@
+header{
+  background-color: $purple;
+  padding: 60px 0;
+
+  h1{
+    color: $white;
+    display: inline-block;
+    margin: .9rem 0 0 1rem;
+  }
+
+  .main-logo {
+    height: 5rem;
+    display: inline-block;
+    float: left;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+  .social-networks {
+    display: inline-block;
+    float: right;
+    margin-top: 1rem;
+    a {
+      margin-left: 1rem;
+      font-size: 1rem;
+      color: $white;
+    }
+  }
+}
