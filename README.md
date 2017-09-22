@@ -21,4 +21,6 @@ https://app.moqups.com/civica-digital/d4yHUXskVr/view
 
 https://quake-relief-cdmx.civicadesarrolla.me/
 
+# ¿Cómo instalar?  
+
 
