@@ -10,7 +10,7 @@
     = javascript_include_tag 'application'
 
   %body
-    = render 'shared/header'
-    = render 'shared/modal'
+    = render 'layouts/header'
+    = render 'layouts/modal'
     = yield
-
+    = render 'layouts/footer'

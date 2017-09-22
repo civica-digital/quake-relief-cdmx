@@ -1,4 +1,5 @@
 require 'twitter'
+require 'needs'
 
 module TwitterScanner
 
@@ -25,7 +26,12 @@ module TwitterScanner
       next if needs.blank?
       neighborhood = self.extract_neighborhood(tweet_text)
       next if neighborhood.blank?
+
       self.update_tweets_counter(needs, neighborhood)
+
+      # Categorize needs and neighborhood
+      t.neighborhood = neighborhood
+      t.needs = needs
 
       t.save
     end
@@ -81,6 +87,9 @@ module TwitterScanner
 
       counter.increment(:tweets_count).save
     end
+  end
+
+  def self.categorize_needs_and_neighborhood(tweet, needs, neighborhood)
   end
 
   def self.update_database

@@ -40,9 +40,10 @@
 }
 
 .photo {
-  height: 1.5rem;
+  height: 3rem;
+  display: inline-block
   img {
-    height: 200%;
+    height: 100%;
     width: auto;
   }
 }
