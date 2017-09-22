@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require modal
+//= require static_pages
 //Document and DOM is now available
 
 
