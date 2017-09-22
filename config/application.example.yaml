@@ -1,0 +1,11 @@
+development:
+  REDIS_URL: redis://localhost:6379
+  TWITTER_CONSUMER_KEY:
+  TWITTER_CONSUMER_SECRET:
+  TWITTER_ACCESS_TOKEN:
+  TWITTER_ACCESS_TOKEN_SECRET:
+  DATABASE_HOST: localhost
+  # Por default el usuario de postgres es el nombre de usuario de tu computadora
+  DATABASE_USERNAME:
+  # Por default postgres no tiene password para el usuario default
+  DATABASE_PASSWORD: ''
