@@ -24,4 +24,39 @@ https://quake-relief-cdmx.civicadesarrolla.me/
 
 # ¿Cómo instalar?  
 
+Pre-requisitos
+Rails 5.0.6
+Configuración de postgress
+
+Instrucciones para configurar usuario de postgress para rails en linux
+https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-ubuntu-14-04
+
+1.- Clonar el repositorio 
+    git@github.com:civica-digital/quake-relief-cdmx.git
+
+
+2.- Modificar el archivo database.yml en local con cuidado de no subirlo así cuando se envien cambios.
+
+  username: <%= ENV.fetch('DATABASE_USERNAME') { 'postgres' } %>
+  password: <%= ENV.fetch('DATABASE_PASSWORD') { '' } %>
+  
+  username: Tu_usuario
+  password: tu_password
+
+3.- Ejecutar el comando de rails para crear la base de datos
+     rake db:setup
+
+4.- Ejecutar el comando de las migraciones
+     rake db:migration
+     
+5.- Ejecutar el comando de instalación de gemas
+    bundle install
+
+6.- Ejecutar el servidor de rails
+
+    rails s
+
+    Tambien dependiendo de la configuración podria ser
+
+    rails s -b 0.0.0.0
 
