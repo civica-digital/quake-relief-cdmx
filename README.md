@@ -40,8 +40,8 @@ https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your
     username: <%= ENV.fetch('DATABASE_USERNAME') { 'postgres' } %>
     password: <%= ENV.fetch('DATABASE_PASSWORD') { '' } %>
   
-    username: Tu_usuario
-    password: tu_password
+    username: Tu_usuario_postgress
+    password: tu_password_postgress
 
 3.- Ejecutar el comando de rails para crear la base de datos: 
   
