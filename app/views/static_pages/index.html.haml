@@ -1,9 +1,9 @@
 %section.home
   .container
-    %h1 Principales áreas de necesidad (ultimas 2 horas)
-    %h3 Selecciona en la que tú puedes apuntarte a ayudar.
+    %h1 Principales áreas de necesidad (últimas 2 horas)
+    %h3 Selecciona en la que puedes apuntarte a ayudar.
     .container-flex
-      %span Filtrar por zonas:
+      %span Filtrar por zona:
       %form{onchange: "changeNeighborhood(this);", :data => ''}
         .custom-dropdown
           = select_tag "Todas", options_for_select(@status_options, @neighborhood&.titleize || "Todas"), {:class => "form-control"}
