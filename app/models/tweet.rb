@@ -15,4 +15,7 @@ class Tweet < ApplicationRecord
     matches = keywords.map { |k| self.search_by_keyword(k) }
     matches.flatten
   }
+
+  scope :by_neighborhood, -> (name) { where(neighborhood: name) }
+  scope :by_need, -> (need) { where('tweets.needs @> ARRAY[?]', need) }
 end
