@@ -1,6 +1,6 @@
 El escenario principal que se cumple con este repo es permitir a las personas encontrar los lugares donde pueden dar ayuda y coordinar los esfuerzos de la manera ms eficiente en la ciudad
 
-# Escenarios Actuales - 21/09/2017
+# Escenarios Actuales - 22/09/2017
 
 1. Como voluntario entro al sitio y localizo las temáticas por colonia
 
