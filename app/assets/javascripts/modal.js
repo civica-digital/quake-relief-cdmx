@@ -7,12 +7,13 @@ function modalToggle() {
     $(".modal-fade-screen").css({visibility: "visible"});
   });
 
-  $('body').on("click", "#step2_trigger", function() {
+  $('body').on("click", "#step2_trigger", function(e) {
+    e.preventDefault();
     $("#modal-step-1").addClass("hidden-content");
     $("#modal-step-2").removeClass("hidden-content");
   })
 
-  $('body').on("click", ".close-icon", function() {
+  $('body').on("click, .modal-fade-screen", ".close-icon", function() {
     $(".modal-inner").hide();
     $(".modal-fade-screen").css({opacity: 0})
     $(".modal-fade-screen").css({visibility: "hidden"})
