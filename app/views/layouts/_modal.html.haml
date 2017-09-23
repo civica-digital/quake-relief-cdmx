@@ -1,5 +1,4 @@
-.modal-fade-screen
-.modal-inner
+.modal-inner#modal-inner
   .modal-close
     .close-icon
   #modal-step-1
@@ -7,8 +6,8 @@
       .bullet
         =fa_icon 'wrench 2x', class: 'main-icon'
       .bullet-info
-        %h3=@need&.titleize
-        %p="#{@supportes} Personas apoyando"
+        %h3=counter&.need&.titleize
+        %p="#{counter&.supporters_count} Personas apoyando"
         %p.bold ¿En Dónde se necesita?
         %span No tenemos ubicación identificada. Ayudanos a ubicarla
         =link_to "+Agregar ubicacion", "#"
@@ -16,22 +15,15 @@
           =link_to "Quiero ayudar con eso", "#", class: "basic-button-link", id: 'step2_trigger'
     .tweet-feed
       %p.bold.margin-bullet Algunos de los Tweets que usamos para reconocer la necesidad:
-      .tweet-item
-        .photo=image_tag 'https://pbs.twimg.com/profile_images/633842965622882304/Cy083Uu9_normal.png'
-        .tweet-content
-          %p.bold @username
-          %p Se necesita ayuda de XXX en el lugar XXXXX
-          %p
-            =link_to "Ver tweet", "https://twitter.com/AkireLincho/status/910648961584603138", class: "tweet-link"
-      .tweet-item
-        .photo=image_tag 'https://pbs.twimg.com/profile_images/633842965622882304/Cy083Uu9_normal.png'
-        .tweet-content
-          %p.bold @username
-          %p Se necesita ayuda de XXX en el lugar XXXXX
-          .media
-            =image_tag "https://pbs.twimg.com/media/DKNGZHcUQAAn_KP.jpg"
-          %p
-            =link_to "Ver tweet", "https://twitter.com/AkireLincho/status/910648961584603138", class:"tweet-link"
+      -tweets.each do |tweet|
+        .tweet-item
+          .photo=image_tag 'https://pbs.twimg.com/profile_images/633842965622882304/Cy083Uu9_normal.png'
+          .tweet-content
+            %p.bold=tweet.author
+            %p=tweet.text
+            %p
+              =link_to "Ver tweet", tweet.url, class: "tweet-link"
+
   #modal-step-2.hidden-content
     .custom-bullet
       .bullet

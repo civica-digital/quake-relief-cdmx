@@ -42,3 +42,6 @@ docker-compose.override.yml
 # Deploy
 deploy/**/.terraform/*
 deploy/**/terraform*
+
+# Ignore application configuration
+/config/application.yml

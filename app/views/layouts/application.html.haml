@@ -11,6 +11,7 @@
 
   %body
     = render 'layouts/header'
-    = render 'layouts/modal'
+    .modal-fade-screen
+    = render 'layouts/modal', tweets: [], counter: nil
     = yield
     = render 'layouts/footer'

@@ -6,11 +6,11 @@
       %span Filtrar por zona:
       %form{onchange: "changeNeighborhood(this);", :data => ''}
         .custom-dropdown
-          = select_tag "Todas", options_for_select(@status_options, @neighborhood&.titleize || "Todas"), {:class => "form-control"}
+          = select_tag "neighborhoods", options_for_select(@status_options, @neighborhood&.titleize || "Todas"), {:class => "form-control"}
 
     .cards
       -@needs_counters.each_with_index do |counter, index|
-        .card.bg_purple.modal-toggle-js
+        .card.bg_purple.modal-toggle-js{ data: { counter_id: counter.id } }
           - image = "icons/#{counter.need.parameterize}.svg"
           - if asset_exists?(image)
             .icon=image_tag(image)
@@ -22,7 +22,7 @@
     %p Si no puedes ayudar en las que necesitan más apoyo, pero puedes apoyar en éstas áreas, toda ayuda es bienvenida.
     .cards
       -@supporters_counters.each_with_index do |counter, index|
-        .card.bg_purple.modal-toggle-js
+        .card.bg_purple.modal-toggle-js{ data: { counter_id: counter.id } }
           - image = "icons/#{counter.need.parameterize}.svg"
           - if asset_exists?(image)
             .icon=image_tag(image)

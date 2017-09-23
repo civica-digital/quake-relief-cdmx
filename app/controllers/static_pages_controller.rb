@@ -13,13 +13,13 @@ class StaticPagesController < ApplicationController
   end
 
   def modal
-    @need = params[:need]
+    @counter = TweetsAndSupportersCounter.find(params[:counter_id])
     @neighborhood = params[:neighborhood]
 
-    @checkpoints = Checkpoint.by_need(@need)
-    @checkpoints = @checkpoint.by_neighborhood(@neighborhood) if @neighborhood && @neighborhood != 'total'
+    # @checkpoints = Checkpoint.by_need(@need)
+    # @checkpoints = @checkpoint.by_neighborhood(@neighborhood) if @neighborhood && @neighborhood != 'todas'
 
-    @tweets = tweets_json(@neighborhood, @need)
+    @tweets = tweets_json(@neighborhood, @counter.need)
 
     respond_to do |format|
       format.js
@@ -28,11 +28,12 @@ class StaticPagesController < ApplicationController
 
   def tweets_json(neighborhood, need)
     tweets = Tweet.by_need(need).limit(2)
-    tweets = tweets.by_neighborhood(neighborhood) if neighborhood && neighborhood != 'total'
+    tweets = tweets.by_neighborhood(neighborhood) if neighborhood && neighborhood != 'todas'
 
-    tweets.map do |tweet|
-      JSON.parse(RestClient.get("https://publish.twitter.com/oembed?url=#{tweet.url}").body)
-    end
+    tweets
+    # tweets.map do |tweet|
+    #   JSON.parse(RestClient.get("https://publish.twitter.com/oembed?url=#{tweet.url}").body)
+    # end
   end
 end
 
