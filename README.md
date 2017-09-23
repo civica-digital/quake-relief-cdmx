@@ -87,7 +87,12 @@ $ sudo apt-get install redis-server
 
 2. Configurar las variables de entorno `REDIS_URL` (Si Redis está corriendo en la misma máquina puedes usar el valor que viene), `TWITTER_CONSUMER_KEY`, `TWITTER_CONSUMER_SECRET` y `TWITTER_ACCESS_TOKEN` (necesitas crear una aplicación de Twitter en https://apps.twitter.com).
 
-3. Correr la tarea `twitter:scan`:
+3. Levantar `sidekiq`:
+```
+$ sidekiq
+```
+
+4. Correr la tarea `twitter:scan`:
 ```
 $ rake twitter:scan
 ```
