@@ -34,42 +34,62 @@ https://quake-relief-cdmx.civicadesarrolla.me/
 ## ¿Cómo instalar?
 ### Pre-requisitos
 - Rails 5.0.6
-- Configuración de postgres
+- Postgres
 
 [Configurar usuario de postgress para rails en linux](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-ubuntu-14-04)
 
 1. Clonar el repositorio:
 ```
-git clone git@github.com:civica-digital/quake-relief-cdmx.git
+$ git clone git@github.com:civica-digital/quake-relief-cdmx.git
+o
+$ git clone https://github.com/civica-digital/quake-relief-cdmx.git
 ```
-2. Modificar el archivo database.yml en local con cuidado de no subirlo así cuando se envien cambios:
-```
-username: <%= ENV.fetch('DATABASE_USERNAME') { 'postgres' } %>
-password: <%= ENV.fetch('DATABASE_PASSWORD') { '' } %>
 
-username: Tu_usuario_postgress
-password: tu_password_postgress
+2. Instalar las gemas del proyecto:
 ```
-3. Ejecutar el comando de rails para crear la base de datos:
+$ bundle install
 ```
-rake db:setup
+
+3. Copiar el archivo `config/application.example.yaml` y añadir los valores
+ de las variables de entorno para la base de datos en el nuevo archivo `config/application.yaml`. Las 3 variables que se deben configurar son `DATABASE_HOST`, `DATABASE_USERNAME` y `DATABASE_PASSWORD`:
 ```
-4. Ejecutar el comando de las migraciones:
+$ cp config/application.example.yaml config/application.yaml
 ```
-rake db:migration
+
+4. Crear la base de datos con el comando:
 ```
-5. Ejecutar el comando de instalación de gemas:
+$ rake db:setup
 ```
-bundle install
+
+5. Levantar el servidor de rails:
 ```
-6. Ejecutar el servidor de rails:
-```
-rails s
+$ rails s
 ```
 
 Tambien dependiendo de la configuración podria ser
 ```
 rails s -b 0.0.0.0
+```
+
+### Requisitos para insertar información de muestra en la base de datos
+- Redis
+
+1. Si no tienes Redis instalado:
+```
+# On OSX
+$ brew update
+$ brew install redis
+$ brew services start redis
+
+# On Ubuntu
+$ sudo apt-get install redis-server
+```
+
+2. Configurar las variables de entorno `REDIS_URL` (Si Redis está corriendo en la misma máquina puedes usar el valor que viene), `TWITTER_CONSUMER_KEY`, `TWITTER_CONSUMER_SECRET` y `TWITTER_ACCESS_TOKEN` (necesitas crear una aplicación de Twitter en https://apps.twitter.com).
+
+3. Correr la tarea `twitter:scan`:
+```
+$ rake twitter:scan
 ```
 
 ## ¿Cómo instalar con Docker?
