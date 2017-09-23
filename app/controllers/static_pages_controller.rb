@@ -17,7 +17,7 @@ class StaticPagesController < ApplicationController
     @neighborhood = params[:neighborhood]
 
     # @checkpoints = Checkpoint.by_need(@need)
-    # @checkpoints = @checkpoint.by_neighborhood(@neighborhood) if @neighborhood && @neighborhood != 'Todas'
+    # @checkpoints = @checkpoint.by_neighborhood(@neighborhood) if @neighborhood && @neighborhood != 'todas'
 
     @tweets = tweets_json(@neighborhood, @counter.need)
 
@@ -28,7 +28,7 @@ class StaticPagesController < ApplicationController
 
   def tweets_json(neighborhood, need)
     tweets = Tweet.by_need(need).limit(2)
-    tweets = tweets.by_neighborhood(neighborhood) if neighborhood && neighborhood != 'Todas'
+    tweets = tweets.by_neighborhood(neighborhood) if neighborhood && neighborhood != 'todas'
 
     tweets
     # tweets.map do |tweet|

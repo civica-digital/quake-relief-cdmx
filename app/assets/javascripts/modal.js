@@ -27,7 +27,7 @@ function modalToggle() {
 
 function load_modal_data($element) {
   var counter_id = $element.data('counter-id');
-  var neighborhood = $('#neighborhoods').val();
+  var neighborhood = $('#neighborhoods').val().toLowerCase();
 
   $.ajax({
     type: "GET",
