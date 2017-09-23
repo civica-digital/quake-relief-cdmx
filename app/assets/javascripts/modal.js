@@ -6,12 +6,13 @@ function modalToggle() {
     $(".modal-fade-screen").css({visibility: "visible"});
   });
 
-  $("#step2_trigger").on("click", function() {
+  $("#step2_trigger").on("click", function(e) {
+    e.preventDefault();
     $("#modal-step-1").addClass("hidden-content");
     $("#modal-step-2").removeClass("hidden-content");
   })
 
-  $(".close-icon").on("click", function() {
+  $(".close-icon, .modal-fade-screen").on("click", function() {
     $(".modal-inner").hide();
     $(".modal-fade-screen").css({opacity: 0})
     $(".modal-fade-screen").css({visibility: "hidden"})
